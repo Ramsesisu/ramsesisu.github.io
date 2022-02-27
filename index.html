@@ -15,44 +15,18 @@
         body {background-color: #5f8533;}
         
         .background {
-            background-image: url(img/fischer.jpg);
+            background-image: url(img/background.jpg);
             background-position: center;
             background-position-x: center;
             background-position-y: top;
             background-size: auto 100%;
-            background-repeat: no-repeat;
+            background-repeat: repeat;
             background-attachment: scroll;
             
-        }
-        
-        .demo-layout-transparent .mdl-layout__header,
-        .demo-layout-transparent .mdl-layout__drawer-button {
-            /* This background is dark, so we set text to white. Use 87% black instead if
-         your background is light. */
-            color: rgb(224, 224, 224);
-        }
-        
-        .mdl-layout__drawer.is-visible {
-            left: 0;
         }
     
         .mdl-layout__header {
             background-color: rgba(46, 46, 46, 0.404);
-        }
-    
-        .mdl-navigation__link {
-            color: #494949;
-            text-decoration: none;
-            margin: 0;
-            font-size: 14px;
-            font-weight: 400;
-            line-height: 15px;
-            letter-spacing: 0;
-            opacity: .87
-        }
-        
-        .mdl-navigation__link-header {
-            height: 25px;
         }
         
         .entry-content,
@@ -61,7 +35,7 @@
         }
         
         .entry-header {
-            border-left: 6px solid #72c92c;
+            border-left: 6px solid #6fb61d;
             margin: 0 0 47px 54px;
             padding: 0 30px 0 14px;
         }
@@ -81,48 +55,53 @@
             padding: 5%;
         }
 
+        .layout__tab-container {
+            justify-content: center;
+        }
+
+        .layout__tab-item {
+            width: 10%;
+        }
+
+        .mdl-layout__tab-bar {
+            background-color: #5f8533;
+        }  
+
+        .mdl-layout__tab-bar-button {
+            background-color: #5f8533;
+        }
+
+        .layout__header-row {
+            align-self: center;
+            font-size: 4.5vw;
+            height: 50px;
+            margin-top: 6%;
+            margin-bottom: 1%;
+        }
+
     </style>
 
 </head>
 
 <body>
-
-    <div class="background demo-layout-transparent mdl-layout mdl-js-layout mdl-layout--fixed-header">
-        <header class="mdl-layout__header">
-            <div class="mdl-layout__header-row">
-                <!-- Title -->
-                <span class="mdl-layout-title">Navigation</span>
-                <!-- Add spacer, to align navigation to the right -->
-                <div class="mdl-layout-spacer"></div>
-                <!-- Navigation -->
-                <nav class="mdl-navigation">
-                    <!-- Expandable Textfield -->
-                    <form action="#">
-                        <div class="mdl-textfield mdl-js-textfield mdl-textfield--expandable mdl-textfield
-                    mdl-textfield--floating-label mdl-textfield--align-right">
-                            <label class="mdl-button mdl-js-button mdl-button--icon" for="fixed-header-drawer-exp">
-                                <i class="material-icons">search</i>
-                            </label>
-                            <div class="mdl-textfield__expandable-holder">
-                                <input class="mdl-textfield__input" type="text" name="sample" id="fixed-header-drawer-exp">
-                                <label class="mdl-textfield__label" for="fixed-header-drawer-exp">Suche nach...</label>
-                            </div>
-                        </div>
-                    </form>
-                </nav>
-            </div>
-        </header>
-        <div class="mdl-layout__drawer">
-            <span class="mdl-layout-title">Navigation</span>
-            <nav class="mdl-navigation">
-                <a class="mdl-navigation__link" href="index.html">Startseite</a>
-                <a class="mdl-navigation__link" href="">Schneiderei</a>
-                <a class="mdl-navigation__link" href="">Friseur</a>
-                <a class="mdl-navigation__link" href="">Sonnenstudio</a>
-                <a class="mdl-navigation__link" href="">Manteldesign</a>
-            </nav>
+    <!-- Simple header with fixed tabs. -->
+    <div class="background mdl-layout mdl-js-layout mdl-layout--fixed-header">
+    <header class="mdl-layout__header">
+        <div class="layout__header-row">
+            Ramsesisu-Shop
         </div>
-        <main class="mdl-layout__content">
+        <!-- Tabs -->
+        <div class="mdl-layout__tab-bar mdl-js-ripple-effect layout__tab-container">
+        <a href="#fixed-tab-1" class="mdl-layout__tab is-active layout__tab-item">Startseite</a>
+        <a href="#fixed-tab-2" class="mdl-layout__tab layout__tab-item">Schneiderei</a>
+        <a href="#fixed-tab-3" class="mdl-layout__tab layout__tab-item">Friseur</a>
+        <a href="#fixed-tab-4" class="mdl-layout__tab layout__tab-item">Sonnenstudio</a>
+        <a href="#fixed-tab-5" class="mdl-layout__tab layout__tab-item">Manteldesign</a>
+        </div>
+    </header>
+    <main class="mdl-layout__content">
+        <section class="mdl-layout__tab-panel is-active" id="fixed-tab-1">
+        <div class="page-content">
             <div style="display: flex; align-items: center; justify-content: center;">
                 <div style="border-radius: 8px; width: 90%; height: 100%px; background: rgb(255, 255, 255); margin-top: 10px;  margin-bottom: 50px;">
                     
@@ -160,8 +139,21 @@
 
                 </div>
             </div>
-            <br>
-        </main>
+        </div>
+        </section>
+        <section class="mdl-layout__tab-panel" id="fixed-tab-2">
+        <div class="page-content"><!-- Your content goes here --></div>
+        </section>
+        <section class="mdl-layout__tab-panel" id="fixed-tab-3">
+        <div class="page-content"><!-- Your content goes here --></div>
+        </section>
+        <section class="mdl-layout__tab-panel" id="fixed-tab-4">
+        <div class="page-content"><!-- Your content goes here --></div>
+        </section>
+        <section class="mdl-layout__tab-panel" id="fixed-tab-5">
+        <div class="page-content"><!-- Your content goes here --></div>
+        </section>
+    </main>
     </div>
 </body>
 </html>
